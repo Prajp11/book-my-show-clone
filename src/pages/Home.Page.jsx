@@ -1,30 +1,33 @@
 import React, { useState } from "react";
-//Layout HOC
-import DefaultLayoutHOC from "../layout/Default.layout";
-//Components
+
+// Layout HOC
+import DefaultLayoutHoc from "../layout/Default.layout";
+
+// Components
 import HeroCarousel from "../components/HeroCarousel/HeroCarousel.Component";
 import PosterSlider from "../components/PosterSlider/PosterSlider.Component";
-import EntertainmentCard from "../components/Entertainment/EntertainmentCard.Component";
+import EntertainmentCardSlider from "../components/Entertainment/EntertainmentCard.Component";
 
 const HomePage = () => {
-  const [recommendedMovies, setrecommendedMovies] = useState([]);
-  const [premierMovies, setpremeirMovies] = useState([]);
-  const [onlineStreamEvents, setonlineStreamEvents] = useState([]);
+  const [recommendedMovies, setRecommendedMovies] = useState([]);
+  const [premierMovies, setPremierMovies] = useState([]);
+  const [onlineStreamEvents, setOnlineStreamEvents] = useState([]);
 
   return (
     <>
       <HeroCarousel />
+
       <div className="container mx-auto px-4 md:px-12 my-8">
         <h1 className="text-2xl font-bold text-gray-800 sm:ml-3 ml-0 my-3">
-          The Best of Entertainment
+          The best of Entertainment
         </h1>
-        <EntertainmentCard />
+        <EntertainmentCardSlider />
       </div>
 
       <div className="container mx-auto px-4 md:px-12 my-8">
         <PosterSlider
           title="Recommended Movies"
-          subject="List of recommeded movies"
+          subtitle="List of recommonded movies"
           posters={recommendedMovies}
           isDark={false}
         />
@@ -37,22 +40,22 @@ const HomePage = () => {
           </div>
           <PosterSlider
             title="Premiers"
-            subject="Brand new releases every friday"
+            subtitle="Brand new releases every Friday"
             posters={premierMovies}
             isDark={true}
           />
         </div>
       </div>
-      <div className="container mx-auto px-4 md:px-12 my-8 ">
+      <div className="container mx-auto px-4 md:px-12 my-8">
         <PosterSlider
           title="Online Streaming Events"
-          subject="Online Stream Events"
+          subtitle="Online Stream Events"
           posters={onlineStreamEvents}
           isDark={false}
         />
       </div>
-    </> //Using fragments  instead of div tags
+    </>
   );
 };
 
-export default DefaultLayoutHOC(HomePage);
+export default DefaultLayoutHoc(HomePage);
