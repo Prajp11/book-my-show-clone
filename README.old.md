@@ -88,8 +88,33 @@ import "slick-carousel/slick/slick-theme.css";
 Then I imported BrowserRouter in my index.js and wrapped it up also cause we needed it.
 
 
+### Extentions
 
+we installed few extentions for our easiness
+- auto import
+- auto rename tag
+- auto close tag
+- Prettier code formatter
+- Es7+ React/redux
+- Thunder Client
 
+After this we went to settings and searched for format and we selected for 'Format on Paste and Format on Save' options.
+
+### Working on Project and "rafce" shortcut
+
+- we created folders named pages' and 'layout' in src and again created three files under pages folder for homepage, moviepage and playpage and wrote basic syntrax there and we imported that pages files we created earlier in app.js also.
+
+- After that we created files under layout also called 'Default.layout.jsx' and 'Movie.layout.jsx'. and we used shortcut to write layout syntax under it like we wrote "rafce" and pressed enter we got whole syntax code because we installed extention called 
+'Es7+React/Redux'. in that layout files we added function with (Component) and spread operator ({...props}) function. and that functions we shold call under our div tags.
+
+- Like earlier we mentioned in requiremnts about our components so we have to now create components files under the folder which we have create called 'components' in src
+
+- As we installed extention called Prettier we have to set our default foramatter for prettier then only it will autosuggest us code while writing.
+
+- We started working on requirements which we earalier wrote so I creted here few folders under src in src under components folder we creted sub folders like 'Entertainment', 'HeroCarousel', 'Navbar', 'PoterSlider' and in that added files with '.jsx' in the respective folders to fulfill our requirements and under Navbar did basic structure to see what output we are getting to build further logic.
+
+- Now main thing we have to import the filles which we created earlier in our Home.Page.jsx file to do next working.
+- added one more extention called 'Tailwind intelligence'.
 
 
 
