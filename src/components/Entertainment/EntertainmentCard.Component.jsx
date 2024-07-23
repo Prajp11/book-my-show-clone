@@ -63,8 +63,8 @@ const EntertainmentCardSlider = () => {
   return (
     <>
       <Slider {...settings}>
-        {EntertainmentImage.map((image) => (
-          <EntertainmentCard src={image} />
+        {EntertainmentImage.map((image, index) => (
+          <EntertainmentCard src={image} key={index} />
         ))}
       </Slider>
     </>

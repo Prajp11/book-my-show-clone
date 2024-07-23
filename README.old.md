@@ -119,6 +119,52 @@ After this we went to settings and searched for format and we selected for 'Form
 
 
 
+### Movie Database
+- I want databse of latest and old movies for my application so there is  one official website where we can connect our app to this site as our database 'https://www.themoviedb.org/' to fetch the movies info which we want on our application. So register yourself and then go to your profile and click on API and generate key for yourself so select option as developer then fill few required basic details and then it will generate API key of movie database for you.
+ 
+https://api.themoviedb.org/3/movie/550?api_key=5f46472485153405e872c193604a6618 
+
+HomePage Component
+
+The HomePage component fetches top-rated movies from the TMDb API and stores them in the component's state when it mounts.
+
+javascript
+const HomePage = () => {
+  const [recommendedMovies, setRecommendedMovies] = useState([]);
+
+  useEffect(() => {
+    const requestTopRatedMovies = async () => {
+      const getTopRatedMovies = await axios.get("https://api.themoviedb.org/3/movie/top_rated?api_key=YOUR_API_KEY");
+      setRecommendedMovies(getTopRatedMovies.data.results);
+    };
+    requestTopRatedMovies();
+  }, []);
+
+  // Render movies here
+};
+
+
+### Code Explanation
+
+- *useState*:
+  - Initializes recommendedMovies state as an empty array.
+  
+- *useEffect*:
+  - Runs the provided function once when the component mounts, similar to componentDidMount in class components.
+  - Defines and calls requestTopRatedMovies to fetch data from the TMDb API.
+
+- *requestTopRatedMovies*:
+  - An asynchronous function that makes a GET request to the TMDb API using axios.get.
+  - Updates recommendedMovies state with the fetched data (getTopRatedMovies.data.results).
+
+Replace YOUR_API_KEY with your actual TMDb API key.
+
+### Import Link
+
+- if we want our application to be work like a single page application(SPA) then make sure you are importing link here from react router dom and we are importing it in 'Poster.Component.jsx' cause we have to amke sure that on clicking poster of movie it should not reload whole application but only the required linkinshort we ahve anchor tags in HTML and this Link acts as same in react.
+
+- We know that we are calling our data from TMDB so under image tag we have mention our image src={"https://image.tmdb.org/t/p/original${props.poster_path}"} like this.
+
 
 
 
