@@ -165,6 +165,58 @@ Replace YOUR_API_KEY with your actual TMDb API key.
 
 - We know that we are calling our data from TMDB so under image tag we have mention our image src={"https://image.tmdb.org/t/p/original${props.poster_path}"} like this.
 
+In JavaScript, backticks (`` ` ``) are used for template literals, which allow for embedded expressions and multi-line strings. Here's why we used backticks instead of single or double quotes:
+
+### Reasons for Using Backticks
+
+Template Literals:
+   - Template literals allow embedding expressions within a string using the ${expression} syntax. This is not possible with single (') or double (") quotes.
+   - Example:
+     javascript
+     const movieId = 123;
+     const url = `/movie/${movieId}`; // Using backticks
+     
+
+String Interpolation:
+   - Backticks enable string interpolation, which means you can insert variables and expressions directly into the string.
+   - Example:
+     javascript
+     const posterPath = '/path/to/poster.jpg';
+     const imageUrl = `https://image.tmdb.org/t/p/original${posterPath}`; // Using backticks
+     
+
+Multi-line Strings:
+   - Template literals can span multiple lines, which can make code more readable when dealing with long strings.
+   - Example:
+     javascript
+     const multiLineString = `This is a string
+     that spans multiple
+     lines.`;
+     
+
+### Example in Your Code
+
+- *Link Component*:
+  javascript
+  <Link to={`/movie/${props.id}`}>
+  
+  - props.id is embedded within the URL string using ${props.id}.
+
+- *img Element*:
+  javascript
+  <img src={`https://image.tmdb.org/t/p/original${props.poster_path}`} alt="Poster" className="w-full h-full rounded-md" />
+  
+  - props.poster_path is embedded within the image URL string using ${props.poster_path}.
+
+Using single or double quotes would not allow embedding these expressions directly into the strings. Instead, you'd have to concatenate strings, which is less readable and more error-prone. For example:
+
+### Without Template Literals
+javascript
+const url = '/movie/' + props.id; // String concatenation with single quotes
+const imageUrl = 'https://image.tmdb.org/t/p/original' + props.poster_path; // String concatenation with single quotes
+
+
+Using backticks and template literals makes the code cleaner and easier to read.
 
 
 
