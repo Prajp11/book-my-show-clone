@@ -1,11 +1,12 @@
+
 import React from "react";
 import Slider from "react-slick";
 import Poster from "../Poster/Poster.Component";
 
 const PosterSlider = (props) => {
-  const { posters, title, subtitle, isDark } = props;
+  const { posters, title, subtitle, isDark, config} = props;
   const settings = {
-    inifinite: true,
+    infinite: true,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 4,
@@ -13,18 +14,18 @@ const PosterSlider = (props) => {
       {
         breakpoint: 1024,
         settings: {
-        slidesToShow: 3,
-        slidesToScroll: 2,
+          slidesToShow: 3,
+          slidesToScroll: 2,
+        },
       },
-    },
-    {
-      breakpoint: 600,
-      settings: {
-      slidesToShow: 2,
-      slidesToScroll: 1,
-    },
-  },
-    ]
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
     <>

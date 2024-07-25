@@ -8,7 +8,7 @@ function NavSm() {
         <div>
           <h3 className="text-xl font-bold">It All Starts Here!</h3>
           <span className="text-gray-400 text-xs flex items-center cursor-pointer hover:text-white">
-            Bangalore <BiChevronDown />
+            Pune <BiChevronDown />
           </span>
         </div>
         <div className="w-8 h-8">
