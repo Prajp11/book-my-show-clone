@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Cast = (props) => {
-  console.log(props);
+  // console.log(props);
   return (
     <div className='flex flex-col items-center'>
       <div className='relative w-32 h-32'>
@@ -17,6 +17,8 @@ const Cast = (props) => {
           </div>
         )}
       </div>
+      <h1 className='text-xl text-gray-800'>{props.castName}</h1>
+      <h5 className='text-sm text-gray-500'>{props.role}</h5>
     </div>
   );
 }

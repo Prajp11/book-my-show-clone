@@ -219,6 +219,8 @@ const imageUrl = 'https://image.tmdb.org/t/p/original' + props.poster_path; // S
 Using backticks and template literals makes the code cleaner and easier to read.
 
 
+### Payment Modal
+- For creating paymenyt modal or we want to get pop-up message like payment got successful you have to use one official site called 'Headless UI' where they will provide you details for the same features which want with the code.
 
 
 
